@@ -4,8 +4,10 @@ kind: Ingress
 metadata:
   name: buzzboard-ingress
   namespace: frontend
+  annotations:
+    kubernetes.io/ingress.class: "traefik"    # ← change this
 spec:
-  ingressClassName: nginx
+  ingressClassName: traefik                    # ← and this
   tls:
     - hosts:
         - buzzboard.local
