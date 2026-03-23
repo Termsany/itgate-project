@@ -5,8 +5,9 @@ kind: Ingress
 metadata:
   name: buzzboard-ingress-api
   namespace: backend
-   annotations:
+  annotations:
     nginx.ingress.kubernetes.io/rewrite-target: "/$2"
+    nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   tls:
